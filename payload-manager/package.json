@@ -24,7 +24,7 @@
     "socket.io": "^4.8.3"
   },
   "devDependencies": {
-    "eslint": "^8.57.0"
+    "eslint": "^10.8.0"
   },
   "engines": {
     "node": ">=16.0.0"
