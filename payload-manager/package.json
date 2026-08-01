@@ -1,0 +1,32 @@
+{
+  "name": "attiny-payload-manager",
+  "version": "1.0.0",
+  "description": "ATtiny85 / Digispark HID emulation payload manager",
+  "main": "src/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "attiny",
+    "digispark",
+    "hid",
+    "payload"
+  ],
+  "author": "XBrutalPandaX",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "socket.io": "^4.8.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

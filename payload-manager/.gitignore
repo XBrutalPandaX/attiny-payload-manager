@@ -1,0 +1,57 @@
+# ── dependencies ─────────────────────────────────────────────────────────────
+node_modules/
+.pnp
+.pnp.js
+
+# ── build outputs ─────────────────────────────────────────────────────────────
+build/
+client/dist/
+
+# ── arduino runtime build artifacts ──────────────────────────────────────────
+build_avr/
+core/
+sketch/
+libraries/
+final/
+temp_sketch/
+*.hex
+*.elf
+*.map
+*.eep
+*.bin
+*.lst
+*.bak
+libraries.cache
+includes.cache
+build.options.json
+compile_commands.json
+temp_sketch.ino
+
+# ── environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ── logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ── tools (binaries — download locally, never committed) ─────────────────────
+tools/arduino-cli.exe
+tools/micronucleus.exe
+tools/arduino-cli
+
+# ── os junk ───────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── editor ────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
