@@ -12,7 +12,7 @@ export const runPayload = (socket, data) => {
   const mult = speedMap[speed] || 1.0
   const command = buildCommand(bin, cmd, customBin)
   const escaped = escapeString(command)
-  const triggerCode = buildTriggerCode(trigger, escaped, mult)
+  const triggerCode = buildTriggerCode(trigger, escaped, mult, speed)
 
   if (!triggerCode) {
     logger.log(socket, 'CRITICAL: unknown trigger "' + trigger + '"', 'error')
@@ -20,7 +20,7 @@ export const runPayload = (socket, data) => {
   }
 
   const usbCfg = buildUsbConfig(deviceProfile, customVid, customPid)
-  buildAndUpload(socket, makeSketch(triggerCode), usbCfg)
+  buildAndUpload(socket, makeSketch(triggerCode, speed), usbCfg)
 }
 
 export const runSketch = (socket, data) => {
@@ -35,14 +35,14 @@ export const previewSketch = (socket, data) => {
   const mult = speedMap[speed] || 1.0
   const command = buildCommand(bin || 'powershell', cmd, customBin)
   const escaped = escapeString(command)
-  const triggerCode = buildTriggerCode(trigger || 'run', escaped, mult)
+  const triggerCode = buildTriggerCode(trigger || 'run', escaped, mult, speed || 'normal')
 
   if (!triggerCode) {
     logger.log(socket, 'CRITICAL: unknown trigger', 'error')
     return
   }
 
-  socket.emit('sketch-content', makeSketch(triggerCode))
+  socket.emit('sketch-content', makeSketch(triggerCode, speed || 'normal'))
 }
 
 export const runRegistry = (socket, data) => {
